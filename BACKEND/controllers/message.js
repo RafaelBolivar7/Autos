@@ -120,12 +120,12 @@ var controller = {
                 message: "Mensajes", 
                 doc
             });
-        });
+        }).populate(["car","client"]);
     },
 
     showMessage: function(req, res){
         var messageId = req.params.id;
-        Message.findById(messageId)
+        Message.findById(messageId).populate(["car","client"])
             .exec((error, message)=>{
                 if(error){
                     return res.status(500).send({

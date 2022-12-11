@@ -55,7 +55,7 @@ var controller = {
             var admin = new Admin();
             
             var update = {
-                name: params.namec,
+                name: params.name,
                 email: params.email,
                 password: params.password,
             }
@@ -112,7 +112,7 @@ var controller = {
 
     listAdmins: function(req, res){
         
-        Client.find(function(error, doc){
+        Admin.find(function(error, doc){
             console.log(doc);
             return res.status(200).send({
                 message: "Administradores", 

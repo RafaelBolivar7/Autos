@@ -7,6 +7,7 @@ const admin_routes = require("./routes/admin");
 const client_routes = require("./routes/client");
 const car_routes = require("./routes/car");
 const message_routes = require("./routes/message");
+const reservation_routes = require("./routes/reservation");
 const port = 3000;
 
 mongoose.Promise = global.Promise;
@@ -23,6 +24,7 @@ mongoose.connect("mongodb://localhost:27017/AutosApp", {
     app.use("/api/car", car_routes);
     app.use("/api/admin", admin_routes);
     app.use("/api/message", message_routes);
+    app.use("/api/reservation", reservation_routes);
     app.listen(port, () =>{
         console.log("Servidor corriendo en el puerto", port);
     })
