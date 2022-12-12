@@ -47,9 +47,9 @@ var controller = {
         var params = req.body;
         var messageId = req.params.id;
         console.log(messageId);
-        var validate_text = !validator.isEmpty(params.name);
+        var validate_text = !validator.isEmpty(params.text);
         var validate_client = !validator.isEmpty(params.client); // Los params."nombres" son igual a los de la casilla del body en postman, en este caso surname en el 
-        var validate_car =  !validator.isEmpty(params.email);  
+        var validate_car =  !validator.isEmpty(params.car);  
     
         console.log(validate_car);
 

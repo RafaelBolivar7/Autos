@@ -155,7 +155,7 @@ var controller = {
                 }
 
                 return res.status(200).send({
-                    message: "Este es un persona", 
+                    message: "Este es el carro buscado", 
                     car
                 });
             });
