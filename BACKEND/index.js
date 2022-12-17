@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -13,6 +14,7 @@ const port = 3000;
 mongoose.Promise = global.Promise;
 
 app.use(bodyparser.urlencoded({extended:false}));
+app.use(cors());
 
 mongoose.connect("mongodb://localhost:27017/AutosApp", {
     useNewUrlParser: true,
@@ -20,6 +22,7 @@ mongoose.connect("mongodb://localhost:27017/AutosApp", {
     family: 4
 })
 .then(()=>{
+    app.use(express.json());
     app.use("/api/client",client_routes);
     app.use("/api/car", car_routes);
     app.use("/api/admin", admin_routes);
