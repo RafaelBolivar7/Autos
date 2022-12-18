@@ -2,6 +2,7 @@
 import './App.css';
 //import Footer from './componentes/Footer';
 import Rutas from './Rutas';
+//import Footer from './componentes/Fotter';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
       <header className="">
           <Rutas/>
       </header>
+    
     </div>
+    
   );
 }
 

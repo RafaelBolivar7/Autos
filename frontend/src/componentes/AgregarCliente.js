@@ -66,7 +66,7 @@ class AgregarCliente extends Component{
                             <label for="pass" className="form-label" >Contraseña</label>
                             <input type="password" className="form-control" id="pass" placeholder="Contraseña" name="pass" ref={this.pass} onChange={this.changeState}/>
                         </div>
-                        <input type="submit" className="btn btn-primary"/>  
+                        <input type="submit" className="btn btn-primary" value="Guardar Cliente"/>  
                     </div>
                 </form>
         </React.Fragment>
