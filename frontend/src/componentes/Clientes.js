@@ -35,7 +35,7 @@ class Clientes extends React.Component {
             //window.location.reload(true);
             swal(
                 "Cliente Eliminado", 
-                "El usuario se elimino correctamente",
+                "El cliente se elimino correctamente",
                 "success"
             )
             window.location.reload(true);
