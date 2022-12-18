@@ -16,9 +16,6 @@ class Menu extends Component{
                             <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/clientes">Clientes</a>
-                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Clientes
@@ -26,6 +23,15 @@ class Menu extends Component{
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="/clientes">Listar Cliente</a></li>
                                     <li><a className="dropdown-item" href="/agregarCliente">Agregar Cliente</a></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Carros
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="/Carros">Listar carros</a></li>
+                                    <li><a className="dropdown-item" href="/agregarCarro">Agregar Carro</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Clientes from "./componentes/Clientes";
 import Menu from "./componentes/Menu";
+
+import EditarCliente from "./componentes/EditarCliente";
+
 import AgregarCliente from "./componentes/AgregarCliente";
 import Admins from "./componentes/Admins";
 import AgregarAdmin from "./componentes/AgregarAdmin";
@@ -21,6 +24,7 @@ class Rutas extends Component{
                     <Route path="/" element={<div>HOME</div>}/>
                     <Route path="/clientes" element={<Clientes/>}/>
                     <Route path="/agregarCliente" element={<AgregarCliente/>}/> 
+                    <Route path="/editarCliente/:id" element={<EditarCliente/>}/> 
                     <Route path="/editarCliente/:id" element={<EditarCliente/>}/>
                     <Route path="/admins" element={<Admins/>}/>
                     <Route path="/agregarAdmin" element={<AgregarAdmin/>}/> 
