@@ -8,7 +8,8 @@ import AgregarAdmin from "./componentes/AgregarAdmin";
 import Carros from "./componentes/Carros";
 import AgregarCarro from "./componentes/AgregarCarro";
 import EditarCliente from "./componentes/EditarCliente";
-//import EditarAdmin from "./componentes/EditarAdmin";
+import EditarAdmin from "./componentes/EditarAdmin";
+import EditarCarro from "./componentes/EditarCarro";
 
 
 class Rutas extends Component{
@@ -23,9 +24,10 @@ class Rutas extends Component{
                     <Route path="/editarCliente/:id" element={<EditarCliente/>}/>
                     <Route path="/admins" element={<Admins/>}/>
                     <Route path="/agregarAdmin" element={<AgregarAdmin/>}/> 
-                    {/* <Route path="/editarAdmin/:id" element={<EditarAdmin/>}/> */}
+                    <Route path="/editarAdmin/:id" element={<EditarAdmin/>}/>
                     <Route path="/carros" element={<Carros/>}/>
                     <Route path="/agregarCarro" element={<AgregarCarro/>}/>
+                    <Route path="/editarCarro/:id" element={<EditarCarro/>}></Route>
                 </Routes>
             </BrowserRouter>
         );

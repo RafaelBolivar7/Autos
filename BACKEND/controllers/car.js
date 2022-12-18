@@ -60,11 +60,11 @@ var controller = {
         var validate_year =  !validator.isEmpty(params.year);
         var validate_description =  !validator.isEmpty(params.description);
         var validate_category =  !validator.isEmpty(params.category);
-        var validate_reservation = !validator.isEmpty(params.reservation);
+        //var validate_reservation = !validator.isEmpty(params.reservation);
 
         console.log(validate_year);
       
-        if(validate_name && validate_brand && validate_year && validate_description && validate_category && validate_reservation){
+        if(validate_name && validate_brand && validate_year && validate_description && validate_category /*&&  validate_reservation*/){
             var car = new Car();
             
             var update = {
