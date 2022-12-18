@@ -72,7 +72,8 @@ class AgregarCarro extends Component{
                             <label for="categoria" className="form-label" >Categoría</label>
                             <input type="text" className="form-control" id="categoria" placeholder="Categoría" name="categoria" ref={this.categoria} onChange={this.changeState}/>
                         </div>
-                        <input type="submit" className="btn btn-primary"/>  
+                        
+                       <input type="submit" className="btn btn-primary"  value="Guardar Carro"/>  
                     </div>
                 </form>
         </React.Fragment>
