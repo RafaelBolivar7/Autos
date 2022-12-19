@@ -131,7 +131,7 @@ var controller = {
 
     showReservation: function(req, res){
         var reservationId = req.params.id; 
-        Reservation.findById(reservationId).populate(["car","client"])
+        Reservation.findById(reservationId)/* .populate(["car","client"]) */
             .exec((error, reservation)=>{
                 if(error){
                     return res.status(500).send({

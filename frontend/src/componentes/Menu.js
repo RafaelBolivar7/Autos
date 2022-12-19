@@ -17,7 +17,7 @@ class Menu extends Component{
                                 <a className="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" href="/clientes" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Clientes
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -26,16 +26,16 @@ class Menu extends Component{
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" href="/carros" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Carros
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="/Carros">Listar carros</a></li>
+                                    <li><a className="dropdown-item" href="/carros">Listar carros</a></li>
                                     <li><a className="dropdown-item" href="/agregarCarro">Agregar Carro</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" href="/mensajes" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Mensajes
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,12 +44,12 @@ class Menu extends Component{
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Roles
+                                <a className="nav-link dropdown-toggle" href="/reservaciones" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Reservaciones
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="/mensajes">Listar roles</a></li>
-                                    <li><a className="dropdown-item" href="/agregarMensaje">Agregar Rol</a></li>
+                                    <li><a className="dropdown-item" href="/reservaciones">Listar Reservaciones</a></li>
+                                    <li><a className="dropdown-item" href="/agregarReservacion">Agregar Reservación</a></li>
                                 </ul>
                             </li>
                         </ul>

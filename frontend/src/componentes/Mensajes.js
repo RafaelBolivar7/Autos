@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 
-class Carros extends React.Component {
+class Mensajes extends React.Component {
     state = {
-        carros: []
+        mensajes: []
     }
 
     componentWillMount() {
-        this.getCarros();
+        this.getMensajes();
     }
-    getCarros = () => {
-        axios.get("http://localhost:3000/api/car/all")
+    getMensajes = () => {
+        axios.get("http://localhost:3000/api/message/all")
             .then(res => {
-                console.log("Carros");
+                console.log("Mensajes");
                 console.log(res.data.doc);
                 this.setState({
-                    carros: res.data.doc
+                    mensajes: res.data.doc
                 });
 
             })
@@ -26,59 +26,52 @@ class Carros extends React.Component {
             })
     }
 
-    eliminarCarro = (id) =>{
-        axios.delete("http://localhost:3000/api/car/delete/"+id)
+    eliminarMensaje = (id) =>{
+        axios.delete("http://localhost:3000/api/message/delete/"+id)
         .then(res=>{
             this.setState({
                 status: "deleted"
             })
             //window.location.reload(true);
             swal(
-                "Carro Eliminado", 
-                "El carro se elimino correctamente",
+                "Mensaje Eliminado", 
+                "El mensaje se elimino correctamente",
                 "success"
             )
             window.location.reload(true);
         })
     }
     render(){
-        console.log(this.state.carros);
+        console.log(this.state.mensajes);
         return (
             <React.Fragment>
-                <h1>Carros</h1>
-                <Link to="/agregarCarro" className="btn btn-dark">Agregar Carro</Link>
+                <h1>Mensajes</h1>
+                <Link to="/agregarMensaje" className="btn btn-dark">Agregar Mensaje</Link>
                 <table className="table table-light">
                     <thead>
                         <tr>
                             <td>Id</td>
-                            <td>Nombre</td>
-                            <td>Marca</td>
-                            <td>Modelo</td>
-                            <td>Descripción</td>
-                            <td>Categoría</td>
-                            <td>Reservación</td>
+                            <td>Mensaje</td>
+                            <td>Cliente</td>
+                            <td>Carro</td>
                             <td>Acciones</td>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            this.state.carros.map((carro) => {
+                            this.state.mensajes.map((mensaje) => {
                                 return (
                                     <React.Fragment>
                                         <tr>
-                                            <td>{carro._id}</td>
-                                            <td>{carro.name}</td>
-                                            <td>{carro.brand}</td>
-                                            <td>{carro.year}</td>
-                                            <td>{carro.description}</td>
-                                            <td>{carro.category}</td>
-                                            <td>{carro.reservation}</td>
-
+                                            <td>{mensaje._id}</td>
+                                            <td>{mensaje.text}</td>
+                                            <td>{mensaje.client.name}</td>
+                                            <td>{mensaje.car.name}</td>
                                             <td>
-                                                <Link to={"/editarCarro/"+carro._id} className="btn btn-outline-warning">Editar</Link>
+                                                <Link to={"/editarMensaje/"+mensaje._id} className="btn btn-outline-warning">Editar</Link>
                                                 <button className="btn btn-outline-danger ms-3"onClick={
                                                     ()=>{
-                                                        this.eliminarCarro(carro._id)
+                                                        this.eliminarMensaje(mensaje._id)
                                                     }
                                                 }>
                                                     Eliminar</button>
@@ -96,4 +89,4 @@ class Carros extends React.Component {
     }
 }
 
-export default Carros;
+export default Mensajes;

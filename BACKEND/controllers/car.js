@@ -64,7 +64,7 @@ var controller = {
 
         console.log(validate_year);
       
-        if(validate_name && validate_brand && validate_year && validate_description && validate_category /*&&  validate_reservation*/){
+        if(validate_name && validate_brand && validate_year && validate_description && validate_category /*validate_reservation*/){
             var car = new Car();
             
             var update = {
@@ -134,12 +134,12 @@ var controller = {
                 message: "Carros", 
                 doc
             });
-        }).populate("reservation");
+        })/* .populate("reservation") */;
     },
 
     showCar: function(req, res){
         var carId = req.params.id;
-        Car.findById(carId).populate("reservation")
+        Car.findById(carId)/* .populate("reservation") */
             .exec((error, car)=>{
                 if(error){
                     return res.status(500).send({

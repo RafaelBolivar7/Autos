@@ -125,7 +125,7 @@ var controller = {
 
     showMessage: function(req, res){
         var messageId = req.params.id;
-        Message.findById(messageId).populate(["car","client"])
+        Message.findById(messageId)/* .populate(["car","client"]) */
             .exec((error, message)=>{
                 if(error){
                     return res.status(500).send({
