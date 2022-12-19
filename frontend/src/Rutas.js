@@ -3,8 +3,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Clientes from "./componentes/Clientes";
 import Menu from "./componentes/Menu";
 
-import EditarCliente from "./componentes/EditarCliente";
-
 import AgregarCliente from "./componentes/AgregarCliente";
 import Admins from "./componentes/Admins";
 import AgregarAdmin from "./componentes/AgregarAdmin";

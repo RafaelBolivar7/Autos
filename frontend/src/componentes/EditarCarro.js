@@ -93,7 +93,7 @@ class EditarCarro extends Component {
                             <label for="categoria" className="form-label">Categoría</label>
                             <input type="text" className="form-control" id="categoria"  defaultValue={this.state.carro.category} ref={this.categoria}/>                     
                         </div>
-                        <input type="submit" className="btn btn-primary"/>  
+                        <input type="submit" className="btn btn-primary" value="Guardar Carro"/>  
                     </div>
                 </form>
             </React.Fragment>
