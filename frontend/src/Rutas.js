@@ -25,7 +25,35 @@ class Rutas extends Component{
             <BrowserRouter>
                 <Menu />
                 <Routes>
-                    <Route path="/" element={<div>HOME</div>}/>
+                    <Route path="/" element={ <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="../../img/home images/Slide1.jpg" class="d-block w-100" alt="imagen publicidad"/>
+                    </div>
+
+
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../img/home images/Slide2.jpg" class="d-block w-100" alt="imagen publicidad"/>
+                    </div>
+
+
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../img/home images/Slide3.jpg" class="d-block w-100" alt="imagen publicidad"/>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../img/home images/Slide4.jpg" class="d-block w-100" alt="imagen publicidad"/>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>}/>
                     <Route path="/clientes" element={<Clientes/>}/>
                     <Route path="/agregarCliente" element={<AgregarCliente/>}/> 
                     <Route path="/editarCliente/:id" element={<EditarCliente/>}/> 
