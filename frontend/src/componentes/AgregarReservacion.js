@@ -12,6 +12,10 @@ class agregarReservacion extends Component{
         state ={
                 reservacion:[],
                 status: null
+        } 
+        componentWillMount() {
+            this.getCarros();
+            
         }
 
         changeState = ()=>{
@@ -43,6 +47,55 @@ class agregarReservacion extends Component{
                 })
         }
 
+        getCarros = (e) => {
+                axios.get("http://localhost:3000/api/car/all")
+                    .then(res => {
+                        console.log("Carros");
+                        console.log(res.data.doc+"ya esta");
+                        this.setState({
+                                respuestaG: res.data.doc
+                                
+                        });
+                        
+        
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            }
+
+            pintarRespuestaG=(respuestaG)=>{
+                var mylistaG=document.getElementById("resultadoG");
+                var i=0;
+                for(i=0; i<respuestaG.length; i++){
+                    mylistaG.innerHTML+=`<option value="${respuestaG[i]._id}">${respuestaG[i].name}</option>`;
+                }
+                console.log("hay lista");
+                console.log(mylistaG);
+            }
+
+
+
+          /*  getClientes = (e) => {
+                axios.get("http://localhost:3000/api/client/all")
+                    .then(res => {
+                        console.log("Clientes");
+                        console.log(res.data.doc);
+                        this.setState({
+                            clientes: res.data.doc
+                            
+                        });
+        
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+
+
+
+
+            }   */
+
     render(){
         if(this.state.status === "Success"){
                 return <Navigate to = "/reservaciones"></Navigate>
@@ -69,8 +122,11 @@ class agregarReservacion extends Component{
                             <input type="text" className="form-control" id="cliente" placeholder="Cliente" name="cliente" ref={this.cliente} onChange={this.changeState}/>
                         </div>
                         <div className="mb-3">
-                            <label for="carro" className="form-label"  >Carro</label>
-                            <input type="text" className="form-control" id="carro" placeholder="Cliente" name="cliente" ref={this.carro} onChange={this.changeState}/>
+                            <label for="resultadoC" className="form-label">Carro</label>
+                            <select name="resultadoG" className="form-control" id="resultadoG" required>
+                                <option>Seleccionar</option>
+                                
+                            </select>
                         </div>
                         <input type="submit" className="btn btn-primary" value="Guardar Reservación"/>  
                     </div>
