@@ -17,11 +17,6 @@ class agregarReservacion extends Component{
             this.getCarros();
             
         }
-        } 
-        componentWillMount() {
-            this.getCarros();
-            
-        }
 
         changeState = ()=>{
                 this.setState({
