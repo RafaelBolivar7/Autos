@@ -51,7 +51,7 @@ class agregarReservacion extends Component{
                 axios.get("http://localhost:3000/api/car/all")
                     .then(res => {
                         console.log("Carros");
-                        console.log(res.data.doc+"ya esta");
+                        console.log(res.data.doc);
                         this.setState({
                                 respuestaG: res.data.doc
                                 
@@ -118,13 +118,16 @@ class agregarReservacion extends Component{
                             <input type="text" className="form-control" id="estado" placeholder="Estado" name="estado" ref={this.estado} onChange={this.changeState}/>
                         </div>
                         <div className="mb-3">
-                            <label for="cliente" className="form-label"  >Cliente</label>
-                            <input type="text" className="form-control" id="cliente" placeholder="Cliente" name="cliente" ref={this.cliente} onChange={this.changeState}/>
+                        <label for="resultadoC" className="form-label">Carro</label>
+                            <select name="resultadoC" className="form-control" id="resultadoC" required>
+                                <option>Seleccionar Cliente</option>
+                                
+                            </select>
                         </div>
                         <div className="mb-3">
-                            <label for="resultadoC" className="form-label">Carro</label>
+                            <label for="resultadoG" className="form-label">Carro</label>
                             <select name="resultadoG" className="form-control" id="resultadoG" required>
-                                <option>Seleccionar</option>
+                                <option>Seleccionar Carro</option>
                                 
                             </select>
                         </div>
