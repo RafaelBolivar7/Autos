@@ -45,9 +45,10 @@ class Carros extends React.Component {
         console.log(this.state.carros);
         return (
             <React.Fragment>
-                <h1>Carros</h1>
-                <Link to="/agregarCarro" className="btn btn-dark">Agregar Carro</Link>
-                <table className="table table-light">
+                <div className="container w-30 bg-light mt-3 roundedshadow">
+                <h1 className="text-primary">Carros</h1>
+                <Link to="/agregarCarro" className="btn btn-outline-success m-3">Agregar Carro</Link>
+                <table className="table table-light table-striped">
                     <thead>
                         <tr>
                             <td>Id</td>
@@ -56,7 +57,7 @@ class Carros extends React.Component {
                             <td>Modelo</td>
                             <td>Descripción</td>
                             <td>Categoría</td>
-                            <td>Reservación</td>
+                            {/* <td>Reservación</td> */}
                             <td>Acciones</td>
                         </tr>
                     </thead>
@@ -72,7 +73,7 @@ class Carros extends React.Component {
                                             <td>{carro.year}</td>
                                             <td>{carro.description}</td>
                                             <td>{carro.category}</td>
-                                            <td>{carro.reservation}</td>
+                                            {/* <td>{carro.reservation}</td> */}
 
                                             <td>
                                                 <Link to={"/editarCarro/"+carro._id} className="btn btn-outline-warning">Editar</Link>
@@ -91,6 +92,7 @@ class Carros extends React.Component {
                         }
                     </tbody>
                 </table>
+                </div>
             </React.Fragment>
         );
     }

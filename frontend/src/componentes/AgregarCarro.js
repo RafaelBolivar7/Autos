@@ -49,7 +49,8 @@ class AgregarCarro extends Component{
         }
         return(
         <React.Fragment>
-                <h1>Agregar Carros</h1>
+                <div className="container w-30 bg-light mt-3 roundedshadow">
+                <h1 className="text-primary">Agregar Carros</h1>
                 <form onSubmit={this.guardarCarro}>
                     <div className="container">
                         <div className="mb-3">
@@ -76,7 +77,9 @@ class AgregarCarro extends Component{
                        <input type="submit" className="btn btn-primary"  value="Guardar Carro"/>  
                     </div>
                 </form>
+                </div>
         </React.Fragment>
+        
         );
     }
 }

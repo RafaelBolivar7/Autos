@@ -2,13 +2,29 @@
 import './App.css';
 //import Footer from './componentes/Footer';
 import Rutas from './Rutas';
-//import Footer from './componentes/Fotter';
+import {useAuth0} from '@auth0/auth0-react';
+import { LoginButton } from './componentes/Login';
+import { LogoutButton } from './componentes/Logout';
+import { Profile } from './componentes/Profile';
 
 function App() {
+  const {isAuthenticated} = useAuth0();
   return (
     <div className="App">
       <header className="">
-          <Rutas/>
+      <Rutas/>
+      {
+          isAuthenticated ?(
+            <>
+            <Profile/>
+            <LogoutButton/>
+            </>
+          ):(
+            <LoginButton/>
+          )
+        }
+          
+          
       </header>
     
     </div>

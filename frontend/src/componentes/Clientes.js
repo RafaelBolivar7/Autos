@@ -45,9 +45,10 @@ class Clientes extends React.Component {
         console.log(this.state.clientes);
         return (
             <React.Fragment>
-                <h1>Clientes</h1>
-                <Link to="/agregarCliente" className="btn btn-dark">Agregar Cliente</Link>
-                <table className="table table-light">
+                 <div className="container w-30 bg-light mt-3 roundedshadow">
+                <h1 className="text-primary">Clientes</h1>
+                <Link to="/agregarCliente" className="btn btn-outline-success m-3">Agregar Cliente</Link>
+                <table className="table table-light table-striped">
                     <thead>
                         <tr>
                             <td>Id</td>
@@ -86,6 +87,7 @@ class Clientes extends React.Component {
                         }
                     </tbody>
                 </table>
+                </div>
             </React.Fragment>
         );
     }

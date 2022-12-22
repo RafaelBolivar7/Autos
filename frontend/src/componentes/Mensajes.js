@@ -45,9 +45,10 @@ class Mensajes extends React.Component {
         console.log(this.state.mensajes);
         return (
             <React.Fragment>
-                <h1>Mensajes</h1>
-                <Link to="/agregarMensaje" className="btn btn-dark">Agregar Mensaje</Link>
-                <table className="table table-light">
+                <div className="container w-30 bg-light mt-3 roundedshadow">
+                <h1 className="text-primary">Mensajes</h1>
+                <Link to="/agregarMensaje" className="btn btn-outline-success m-3">Agregar Mensaje</Link>
+                <table className="table table-light tabled-striped">
                     <thead>
                         <tr>
                             <td>Id</td>
@@ -84,6 +85,7 @@ class Mensajes extends React.Component {
                         }
                     </tbody>
                 </table>
+                </div>
             </React.Fragment>
         );
     }

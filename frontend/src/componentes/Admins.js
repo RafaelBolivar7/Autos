@@ -45,9 +45,10 @@ class Admins extends React.Component {
         console.log(this.state.admins);
         return (
             <React.Fragment>
-                <h1>Administradores</h1>
-                <Link to="/agregarAdmin" className="btn btn-dark">Agregar Administrador</Link>
-                <table className="table table-light">
+                <div className="container w-30 bg-light mt-3 roundedshadow">
+                <h1 className="text-primary">Administradores</h1>
+                <Link to="/agregarAdmin" className="btn btn-outline-success m-3">Agregar Administrador</Link>
+                <table className="table table-light table-striped">
                     <thead>
                         <tr>
                             <td>Id</td>
@@ -84,6 +85,7 @@ class Admins extends React.Component {
                         }
                     </tbody>
                 </table>
+                </div>
             </React.Fragment>
         );
     }
