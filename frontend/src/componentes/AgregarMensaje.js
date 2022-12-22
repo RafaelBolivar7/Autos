@@ -52,13 +52,30 @@ class agregarMensaje extends Component{
                             <label for="texto" className="form-label">Mensaje</label>
                             <input type="text" className="form-control" id="texto" placeholder="Mensaje" name="texto" ref={this.texto} onChange={this.changeState} />
                         </div>
+                        
                         <div className="mb-3">
-                            <label for="cliente" className="form-label">Cliente</label>
-                            <input type="texto" className="form-control" id="cliente" placeholder="Cliente" name="cliente" ref={this.cliente} onChange={this.changeState} />
+                        <label for="resultadoC" className="form-label">Cliente</label>
+                            <select name="resultadoC" className="form-control" id="cliente" required ref={this.cliente} onChange={this.changeState}>
+                                <option>Seleccionar Cliente</option>
+                                <option value="639f07c0ba9ab59b3c6d0d64">VICTOR</option>
+                                <option value="639f07fdba9ab59b3c6d0d68">Camillo Diaz Ari</option>
+                                <option value="639f2e9aba9ab59b3c6d0d8a">Lorena Vargas</option>
+                                <option value="63a48d04cc6eb2058822c05e">MONICA</option>
+                                <option value="63a48d4fcc6eb2058822c061">Miguel Trujillo</option>
+                                
+                            </select>
                         </div>
                         <div className="mb-3">
-                            <label for="carro" className="form-label"  >Carro</label>
-                            <input type="text" className="form-control" id="carro" placeholder="Carro" name="carro" ref={this.carro} onChange={this.changeState}/>
+                            <label for="resultadoG" className="form-label">Carro</label>
+                            <select name="resultadoG" className="form-control" id="carro" required ref={this.carro} onChange={this.changeState}>
+                                <option>Seleccionar Carro</option>
+                                <option value="639f1e3aba9ab59b3c6d0d80">TOYOTA AM15</option>
+                                <option value="639f8aa8eeec406309ccc353">KIA SK500</option>
+                                <option value="639f94eeeeec406309ccc36c">carro 3</option>
+                                <option value="639f961b85514e3481318350">HONDA GT 5000</option>
+                                <option value="63a48ab7cc6eb2058822c053">TOTOTA COROLA 23A</option>
+                                
+                            </select>
                         </div>
                         <input type="submit" className="btn btn-primary" value="Guardar Mensaje"/>  
                     </div>

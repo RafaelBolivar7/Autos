@@ -12,6 +12,10 @@ class agregarReservacion extends Component{
         state ={
                 reservacion:[],
                 status: null
+        } 
+        componentWillMount() {
+            this.getCarros();
+            
         }
 
         changeState = ()=>{
@@ -43,6 +47,55 @@ class agregarReservacion extends Component{
                 })
         }
 
+        getCarros = (e) => {
+                axios.get("http://localhost:3000/api/car/all")
+                    .then(res => {
+                        console.log("Carros");
+                        console.log(res.data.doc);
+                        this.setState({
+                                respuestaG: res.data.doc
+                                
+                        });
+                        
+        
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            }
+
+            pintarRespuestaG=(respuestaG)=>{
+                var mylistaG=document.getElementById("resultadoG");
+                var i=0;
+                for(i=0; i<respuestaG.length; i++){
+                    mylistaG.innerHTML+=`<option value="${respuestaG[i]._id}">${respuestaG[i].name}</option>`;
+                }
+                console.log("hay lista");
+                console.log(mylistaG);
+            }
+
+
+
+          /*  getClientes = (e) => {
+                axios.get("http://localhost:3000/api/client/all")
+                    .then(res => {
+                        console.log("Clientes");
+                        console.log(res.data.doc);
+                        this.setState({
+                            clientes: res.data.doc
+                            
+                        });
+        
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+
+
+
+
+            }   */
+
     render(){
         if(this.state.status === "Success"){
                 return <Navigate to = "/reservaciones"></Navigate>
@@ -61,16 +114,36 @@ class agregarReservacion extends Component{
                             <input type="date" className="form-control" id="fin" placeholder="Fecha de Fin" name="fin" ref={this.fin} onChange={this.changeState} />
                         </div>
                         <div className="mb-3">
-                            <label for="estado" className="form-label"  >Estado</label>
-                            <input type="text" className="form-control" id="estado" placeholder="Estado" name="estado" ref={this.estado} onChange={this.changeState}/>
+                        <label for="resultadoC" className="form-label">Cliente</label>
+                            <select name="estado" className="form-control" id="estado" required ref={this.estado} onChange={this.changeState}>
+                                <option>Seleccionar Estado</option>
+                                <option value="Abierto">Abierto</option>
+                                <option value="Cerrado">Cerrada</option>        
+                            </select>
                         </div>
                         <div className="mb-3">
-                            <label for="cliente" className="form-label"  >Cliente</label>
-                            <input type="text" className="form-control" id="cliente" placeholder="Cliente" name="cliente" ref={this.cliente} onChange={this.changeState}/>
+                        <label for="resultadoC" className="form-label">Cliente</label>
+                            <select name="resultadoC" className="form-control" id="cliente" required ref={this.cliente} onChange={this.changeState}>
+                                <option>Seleccionar Cliente</option>
+                                <option value="639f07c0ba9ab59b3c6d0d64">VICTOR</option>
+                                <option value="639f07fdba9ab59b3c6d0d68">Camillo Diaz Ari</option>
+                                <option value="639f2e9aba9ab59b3c6d0d8a">Lorena Vargas</option>
+                                <option value="63a48d04cc6eb2058822c05e">MONICA</option>
+                                <option value="63a48d4fcc6eb2058822c061">Miguel Trujillo</option>
+                                
+                            </select>
                         </div>
                         <div className="mb-3">
-                            <label for="carro" className="form-label"  >Carro</label>
-                            <input type="text" className="form-control" id="carro" placeholder="Cliente" name="cliente" ref={this.carro} onChange={this.changeState}/>
+                            <label for="resultadoG" className="form-label">Carro</label>
+                            <select name="resultadoG" className="form-control" id="carro" required ref={this.carro} onChange={this.changeState}>
+                                <option>Seleccionar Carro</option>
+                                <option value="639f1e3aba9ab59b3c6d0d80">TOYOTA AM15</option>
+                                <option value="639f8aa8eeec406309ccc353">KIA SK500</option>
+                                <option value="639f94eeeeec406309ccc36c">carro 3</option>
+                                <option value="639f961b85514e3481318350">HONDA GT 5000</option>
+                                <option value="63a48ab7cc6eb2058822c053">TOTOTA COROLA 23A</option>
+                                
+                            </select>
                         </div>
                         <input type="submit" className="btn btn-primary" value="Guardar Reservación"/>  
                     </div>
